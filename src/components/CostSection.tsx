@@ -37,11 +37,10 @@ export function CostSection() {
         {/* Image */}
         <ScrollReveal direction="right" delay={0.2} className="relative min-h-[400px] lg:min-h-full">
           <img
-            src={`${import.meta.env.BASE_URL}images/cost-setup.jpg`}
-            alt="Andreas Björk's workspace"
+            src={`${import.meta.env.BASE_URL}images/andreas-about.jpg`}
+            alt="Andreas Björk"
             className="absolute inset-0 h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-primary/50" />
         </ScrollReveal>
       </div>
     </section>
