@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asianajotoimisto Träskbäck & Co</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            line-height: 1.7;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Hamburger Menu */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            z-index: 1000;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: background 0.3s;
+        }
+
+        .menu-toggle.over-white {
+            background: #1b4a40;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100vh;
+            background: #1b4a40;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: right 0.4s ease;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu nav {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            text-align: center;
+        }
+
+        .mobile-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 500;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .mobile-menu a:hover {
+            opacity: 0.6;
+        }
+
+        /* Section Base Styles */
+        .section {
+            width: 100%;
+        }
+
+        /* Green Sticky Sections */
+        .green-sticky {
+            position: sticky;
+            top: 0;
+            background: #1b4a40;
+            color: white;
+        }
+
+        /* White Overlay Sections */
+        .white-over {
+            position: relative;
+            background: white;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            height: 100vh;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 60, 50, 0.78);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 40px;
+        }
+
+        .hero-logo {
+            font-family: 'Great Vibes', cursive;
+            font-size: 72px;
+            color: white;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .hero-subtitle {
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 5px;
+        }
+
+        .hero-tagline-container {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        .hero-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: white;
+            line-height: 1.4;
+        }
+
+        .hero-dots {
+            display: flex;
+            gap: 8px;
+            margin-top: 25px;
+            justify-content: center;
+        }
+
+        .hero-dot {
+            width: 6px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.4);
+            transition: all 0.3s;
+        }
+
+        .hero-dot.active {
+            width: 20px;
+            background: white;
+        }
+
+        /* ABOUT SECTION */
+        .about {
+            z-index: 2;
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .about-text {
+            padding: 100px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #1b4a40;
+            line-height: 1.3;
+            margin-bottom: 40px;
+        }
+
+        .about-paragraph {
+            font-size: 14px;
+            line-height: 1.9;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .about-image {
+            background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 100%;
+        }
+
+        /* SERVICES SECTION */
+        .services {
+            z-index: 3;
+            padding: 100px 60px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            text-align: center;
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 20px;
+            stroke: white;
+            stroke-width: 1;
+            fill: none;
+        }
+
+        .service-title {
+            font-size: 12px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .service-desc {
+            font-size: 12px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* COST SECTION */
+        .cost {
+            z-index: 4;
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .cost-text {
+            padding: 100px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .cost-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #1b4a40;
+            line-height: 1.3;
+            margin-bottom: 40px;
+        }
+
+        .cost-paragraph {
+            font-size: 14px;
+            line-height: 1.9;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .cost-image {
+            background-image: url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=800&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 100%;
+        }
+
+        /* BAR ASSOCIATION SECTION */
+        .bar-assoc {
+            z-index: 5;
+            padding: 80px 60px;
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .bar-assoc-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            stroke: white;
+            stroke-width: 1;
+            fill: none;
+        }
+
+        .bar-assoc-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 14px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* TEAM SECTION */
+        .team {
+            z-index: 6;
+            padding: 100px 60px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .team-member {
+            text-align: left;
+        }
+
+        .team-photo {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .team-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #1b4a40;
+            margin-bottom: 5px;
+        }
+
+        .team-role {
+            font-size: 10px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        .team-bio {
+            font-size: 12px;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        /* CONTACT SECTION */
+        .contact {
+            z-index: 7;
+            padding: 80px 60px;
+        }
+
+        .contact-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: white;
+            margin-bottom: 50px;
+            text-align: left;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .contact-col h4 {
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .contact-col p {
+            font-size: 12px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 5px;
+        }
+
+        .contact-col p strong {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+        }
+
+        .contact-links {
+            margin-top: 20px;
+        }
+
+        .contact-links a {
+            display: block;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            margin-bottom: 8px;
+            transition: color 0.3s;
+        }
+
+        .contact-links a:hover {
+            color: white;
+        }
+
+        .contact-fb {
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .contact-fb svg {
+            width: 18px;
+            height: 18px;
+            fill: rgba(255, 255, 255, 0.6);
+            transition: fill 0.3s;
+        }
+
+        .contact-fb:hover svg {
+            fill: white;
+        }
+
+        .lawyer-contact {
+            margin-bottom: 20px;
+        }
+
+        .lawyer-contact p:first-child {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .lawyer-contact a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 12px;
+            transition: color 0.3s;
+        }
+
+        .lawyer-contact a:hover {
+            color: white;
+        }
+
+        /* Contact Form */
+        .contact-form label {
+            display: block;
+            font-size: 10px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 8px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 10px 0;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            margin-bottom: 25px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-bottom-color: white;
+        }
+
+        .contact-form textarea {
+            resize: none;
+            height: 80px;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 15px;
+            background: transparent;
+            border: 1px solid white;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: white;
+            color: #1b4a40;
+        }
+
+        /* Footer */
+        .footer {
+            background: #143830;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .footer a {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about,
+            .cost {
+                grid-template-columns: 1fr;
+            }
+            .about-image,
+            .cost-image {
+                min-height: 400px;
+            }
+            .about-text,
+            .cost-text {
+                padding: 60px 30px;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-logo {
+                font-size: 48px;
+            }
+            .hero-tagline {
+                font-size: 18px;
+            }
+            .about-heading,
+            .cost-heading {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hamburger Menu -->
+    <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <nav>
+            <a href="#about">Tietoa meistä</a>
+            <a href="#services">Palvelut</a>
+            <a href="#cost">Kustannus</a>
+            <a href="#team">Henkilöstö</a>
+            <a href="#contact">Ota yhteyttä</a>
+            <a href="#" style="opacity: 0.6;">SV</a>
+        </nav>
+    </div>
+
+    <!-- HERO SECTION - Green Sticky z-index: 1 -->
+    <section class="section green-sticky hero" style="z-index: 1;">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-logo">Träskbäck</h1>
+            <p class="hero-subtitle">Asianajotoimisto | Advokatbyrå</p>
+            <p class="hero-subtitle">Träskbäck & Co</p>
+            
+            <div class="hero-tagline-container">
+                <p class="hero-tagline">Oikeudellista</p>
+                <p class="hero-tagline">asiantuntemusta</p>
+                <p class="hero-tagline">vaativissa tilanteissa</p>
+                <div class="hero-dots">
+                    <span class="hero-dot active"></span>
+                    <span class="hero-dot"></span>
+                    <span class="hero-dot"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION - White Over z-index: 2 -->
+    <section class="section white-over about" id="about" style="z-index: 2;">
+        <div class="about-text">
+            <h2 class="about-heading">Oikeudellista asiantuntemusta vaativissa tilanteissa</h2>
+            <p class="about-paragraph">Asianajotoimisto Träskbäck & Co palvelee lähes 40 vuoden kokemuksella yksityishenkilöitä, yrityksiä ja yhteisöjä kaikissa oikeudellista asiantuntemusta vaativissa tilanteissa.</p>
+            <p class="about-paragraph">Toimintamme perustuu hyvään asiakaspalveluun ja asiakkaan kuuntelemiseen. Toimeksiantoa hoitaessamme toimimme tarvittaessa yhteistyössä eri alojen asiantuntijoiden kanssa. Hoidamme toimeksiannot luottamuksellisesti ja mahdollisimman ripeästi.</p>
+        </div>
+        <div class="about-image"></div>
+    </section>
+
+    <!-- SERVICES SECTION - Green Sticky z-index: 3 -->
+    <section class="section green-sticky services" id="services" style="z-index: 3;">
+        <div class="services-grid">
+            <div class="service-card">
+                <svg class="service-icon" viewBox="0 0 50 50">
+                    <path d="M25 5 L25 45 M15 15 L25 5 L35 15 M10 25 L40 25 M15 35 L35 35"/>
+                </svg>
+                <h3 class="service-title">Rikosasiat</h3>
+                <p class="service-desc">Toimimme rikosasioissa sekä syytetyn että asianomistajan avustajana oikeudenkäynnissä. Asianajajan hankkiminen voi olla tarpeen jo poliisin suorittaman esitutkinnan aikana. Olemme toimineet avustajina useissa vakavissa rikoksissa.</p>
+            </div>
+            <div class="service-card">
+                <svg class="service-icon" viewBox="0 0 50 50">
+                    <rect x="10" y="8" width="30" height="34" rx="2"/>
+                    <line x1="15" y1="16" x2="35" y2="16"/>
+                    <line x1="15" y1="22" x2="35" y2="22"/>
+                    <line x1="15" y1="28" x2="30" y2="28"/>
+                    <line x1="15" y1="34" x2="25" y2="34"/>
+                </svg>
+                <h3 class="service-title">Riita-asiat</h3>
+                <p class="service-desc">Riita-asiat saattavat koskea esimerkiksi asunto- tai kiinteistökauppariitoja, työsuhteen päättämistä, kuluttajansuoja-asioita tai erilaisia vahingonkorvausasioita. Riita-asioissa asianajajan tehtävänä on neuvotella mahdollisesta sovinnollisesta ratkaisusta vastapuolen kanssa sekä tarvittaessa saattaa asia käräjäoikeuden käsiteltäväksi.</p>
+            </div>
+            <div class="service-card">
+                <svg class="service-icon" viewBox="0 0 50 50">
+                    <circle cx="15" cy="15" r="6"/>
+                    <circle cx="35" cy="15" r="6"/>
+                    <path d="M10 35 Q15 25 25 30 Q35 25 40 35 L40 45 L10 45 Z"/>
+                </svg>
+                <h3 class="service-title">Perheoikeus</h3>
+                <p class="service-desc">Hoidamme avioero-ositukset sekä lasten huoltoon, asumiseen ja tapaamisoikeuteen liittyvät asiat. Olemme toimineet avustajana myös muun muassa edunvalvonta- ja isyysasioissa.</p>
+                <p class="service-desc" style="margin-top: 10px; font-style: italic;">Lapsia koskevat asiat ovat toimistomme erityinen painopistealue.</p>
+            </div>
+            <div class="service-card">
+                <svg class="service-icon" viewBox="0 0 50 50">
+                    <rect x="12" y="5" width="26" height="38" rx="2"/>
+                    <line x1="17" y1="12" x2="33" y2="12"/>
+                    <line x1="17" y1="18" x2="33" y2="18"/>
+                    <line x1="17" y1="24" x2="33" y2="24"/>
+                    <line x1="17" y1="30" x2="28" y2="30"/>
+                </svg>
+                <h3 class="service-title">Perintöoikeus</h3>
+                <p class="service-desc">Laadimme perukirjoja, perinnönjakosopimuksia sekä testamentteja. Toimimme myös käräjäoikeuden määräämänä pesänselvittäjänä- ja jakajana.</p>
+            </div>
+            <div class="service-card">
+                <svg class="service-icon" viewBox="0 0 50 50">
+                    <rect x="8" y="20" width="34" height="25" rx="2"/>
+                    <path d="M15 20 L15 15 Q15 8 25 8 Q35 8 35 15 L35 20"/>
+                    <line x1="25" y1="8" x2="25" y2="5"/>
+                    <rect x="20" y="28" width="10" height="10"/>
+                </svg>
+                <h3 class="service-title">Konkurssit</h3>
+                <p class="service-desc">Hoidamme kaikkia konkursseihin liittyviä asioita. Tarjoamme palveluitamme myös velkojille heidän etujensa valvomiseksi maksukyvyttömyysmenettelyissä. Osana maksukyvyttömyysmenettelyitä hoidamme myös niihin usein liittyvät oikeudenkäynnit, muun muassa takaisinsaantikanteet.</p>
+            </div>
+            <div class="service-card">
+                <svg class="service-icon" viewBox="0 0 50 50">
+                    <rect x="8" y="10" width="34" height="30" rx="2"/>
+                    <line x1="8" y1="18" x2="42" y2="18"/>
+                    <line x1="15" y1="25" x2="35" y2="25"/>
+                    <line x1="15" y1="32" x2="30" y2="32"/>
+                </svg>
+                <h3 class="service-title">Muut asiat</h3>
+                <p class="service-desc">Hoidamme useita hallinto-oikeudessa käsiteltäviä asiaryhmiä, kuten lasten huostaanottoja, mielenterveyslain mukaisia valituksia, maankäyttö- ja rakennusasioita, verovalituksia sekä erilaisia ympäristölupa-asioita.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- COST SECTION - White Over z-index: 4 -->
+    <section class="section white-over cost" id="cost" style="z-index: 4;">
+        <div class="cost-text">
+            <h2 class="cost-heading">Avuntarpeen kartoitus</h2>
+            <p class="cost-paragraph">Soita meille, niin kartoitamme oikeudellisen avuntarpeenne.</p>
+            <p class="cost-paragraph">Selvitämme onko asiakkaalla koti- tai muussa vakuutuksessaan oikeusturvaetu, joka korvaa asianajajan palkkion omavastuuosuutta lukuun ottamatta. Ellei vakuutusta ole tai se ei sovellu kyseiseen asiaan, selvitämme onko asiakkaalla mahdollisuus saada yleistä oikeusapua, jolloin asianajajan palkkio maksetaan joko kokonaan tai osittain valtion varoista.</p>
+        </div>
+        <div class="cost-image"></div>
+    </section>
+
+    <!-- BAR ASSOCIATION SECTION - Green Sticky z-index: 5 -->
+    <section class="section green-sticky bar-assoc" style="z-index: 5;">
+        <svg class="bar-assoc-icon" viewBox="0 0 80 80">
+            <!-- Crown -->
+            <path d="M40 12 L44 18 L48 14 L52 22 L56 18 L56 26 L24 26 L24 18 L28 22 L32 14 L36 18 Z"/>
+            <!-- Shield -->
+            <path d="M20 32 L60 32 L60 52 Q60 66 40 74 Q20 66 20 52 Z"/>
+            <!-- Sword -->
+            <line x1="40" y1="42" x2="40" y2="62"/>
+            <path d="M36 46 L40 42 L44 46"/>
+            <rect x="37" y="62" width="6" height="6"/>
+            <!-- Scales -->
+            <line x1="28" y1="48" x2="52" y2="48"/>
+            <line x1="40" y1="48" x2="40" y2="54"/>
+            <path d="M24 52 Q28 56 32 52"/>
+            <path d="M48 52 Q52 56 56 52"/>
+            <line x1="24" y1="52" x2="24" y2="56"/>
+            <line x1="32" y1="52" x2="32" y2="56"/>
+            <line x1="48" y1="52" x2="48" y2="56"/>
+            <line x1="56" y1="52" x2="56" y2="56"/>
+        </svg>
+        <p class="bar-assoc-text">Kuulumme Suomen Asianajajaliittoon</p>
+    </section>
+
+    <!-- TEAM SECTION - White Over z-index: 6 -->
+    <section class="section white-over team" id="team" style="z-index: 6;">
+        <div class="team-grid">
+            <div class="team-member">
+                <img class="team-photo" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Anni-Leena Träskbäck">
+                <h3 class="team-name">Anni-Leena Träskbäck</h3>
+                <p class="team-role">Asianajaja, varatuomari, osakas</p>
+                <p class="team-bio">Valmistumiseni jälkeen olen auskultoinut Vaasan käräjäoikeudessa (nyk. Pohjanmaan käräjäoikeus). Sen jälkeen työskentelin esittelijänä Vaasan hallinto-oikeudessa sekä Vaasan hovioikeudessa, joissa sain kokemusta ympäristöasioiden sekä rikos- ja riita-asioiden valmistelusta ja ratkaisemisesta. Olen siirtynyt toimiston palvelukseen heinäkuussa 2011. Toimin avustajana muun muassa rikosasioissa, lapsiin liittyvissä asioissa sekä kiinteistö- ja asuntokauppariidoissa. Hoidan mielelläni oikeudenkäyntejä. Olen Vaasan Asianajajayhdistyksen hallituksen jäsen.</p>
+            </div>
+            <div class="team-member">
+                <img class="team-photo" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" alt="Anna-Maria Sjöblom">
+                <h3 class="team-name">Anna-Maria Sjöblom</h3>
+                <p class="team-role">Asianajaja, varatuomari, osakas</p>
+                <p class="team-bio">Valmistumiseni jälkeen työskentelin avustavana lakimiehenä asianajotoimistossa. Olen auskultoinut Vaasan, nykyisessä Pohjanmaan käräjäoikeudessa. Tämän jälkeen olen ollut tuomioistuinlaitoksen palveluksessa yli 20 vuoden ajan ensin esittelijänä, ma assessorina ja ma hovioikeudenneuvoksena Vaasan hovioikeudessa. Tämän jälkeen olen toiminut käräjätuomarina Vaasan/Pohjanmaan käräjäoikeudessa 12 vuotta. Minulla on monipuolinen kokemus tuomioistuimessa käsiteltävissä riita-, rikos- sekä insolvenssiasioissa. Erikoistumisalaani ovat konkurssit sekä perhe- ja jäämistöoikeudelliset asiat.</p>
+            </div>
+            <div class="team-member">
+                <img class="team-photo" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80" alt="Timo Torkko">
+                <h3 class="team-name">Timo Torkko</h3>
+                <p class="team-role">Asianajaja, varatuomari, osakas</p>
+                <p class="team-bio">Valmistuin Lapin yliopistosta oikeustieteiden maisteriksi 2010. Olen aloittanut työurani lakimiehenä asianajotoimistossa riita- ja rikosasioiden parissa. Suoritin tuomioistuinharioittelun Etelä-Pohjanmaan käräjäoikeudessa, josta siirryin Vaasan hallinto-oikeuteen esittelijäksi. Hallinto-oikeudessa käsittelin pääasiassa lastensuojelulain ja ympäristönsuojelun mukaisia asioita. Olen myös toiminut siviilikriisinhallintatehtävissä Kosovossa erityisasiantuntijana vuosina 2017–2018. Palattuani ulkomailta siirryin Vaasan hovioikeuden palvelukseen, jossa olen toiminut esittelijänä, ma. hovioikeudenneuvoksena sekä asessorina ennen siirtymistäni asianajotehtäviin. Minulle on myönnetty myös tuomarikoulutetun arvonimi. Asianajon ohessa toimin sivutoimisesti maatalousyrittäjänä. Oma osaamiseni painottuu riita-asioihin sekä rikosoikeudellisten toimeksiantojen hoitamiseen.</p>
+            </div>
+            <div class="team-member">
+                <img class="team-photo" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80" alt="Nina Nordman">
+                <h3 class="team-name">Nina Nordman</h3>
+                <p class="team-role">asianajosihteeri, Huk</p>
+                <p class="team-bio">Olen Vaasan yliopiston kasvatti ja minulla on reilun 15 vuoden kokemus kääntämisestä. Aloitin työt toimistollamme syksyllä 2022, mitä ennen työskentelin pitkään Vaasan keskussairaalassa osastonsihteerinä ja kielenkääntäjänä. Täällä vastaan toimiston arjen sujuvuudesta ja avustan asianajajia toimeksiantoihin liittyvien päivittaisten tehtävien kanssa.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION - Green Sticky z-index: 7 -->
+    <section class="section green-sticky contact" id="contact" style="z-index: 7;">
+        <h2 class="contact-heading">Ota yhteyttä</h2>
+        <div class="contact-grid">
+            <div class="contact-col">
+                <h4>Asianajotoimisto</h4>
+                <p><strong>Träskbäck & CO Oy</strong></p>
+                <p>Vaasanpuistikko 15 A 15</p>
+                <p>65100 Vaasa</p>
+                <p style="margin-top: 15px;">puh. <strong>(06) 3170 311</strong></p>
+                <p>s-posti: <strong>toimisto@traskback.fi</strong></p>
+                <p style="margin-top: 15px;">Y-tunnus: <strong>3413540-5</strong></p>
+                
+                <div class="contact-links">
+                    <a href="#">Hinnasto</a>
+                    <a href="#">Rekisteriseloste</a>
+                    <a href="#">Evästeasetukset</a>
+                </div>
+                
+                <a href="#" class="contact-fb">
+                    <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+            </div>
+            
+            <div class="contact-col">
+                <div class="lawyer-contact">
+                    <p>Anni-Leena Träskbäck</p>
+                    <p>050 537 5702</p>
+                    <a href="mailto:anni-leena.traskback@traskback.fi">anni-leena.traskback@traskback.fi</a>
+                </div>
+                <div class="lawyer-contact">
+                    <p>Anna-Maria Sjöblom</p>
+                    <p>050 912 0563</p>
+                    <a href="mailto:anna-maria.sjoblom@traskback.fi">anna-maria.sjoblom@traskback.fi</a>
+                </div>
+                <div class="lawyer-contact">
+                    <p>Timo Torkko</p>
+                    <p>050 379 5463</p>
+                    <a href="mailto:timo.torkko@traskback.fi">timo.torkko@traskback.fi</a>
+                </div>
+            </div>
+            
+            <div class="contact-col">
+                <form class="contact-form">
+                    <label>Nimesi</label>
+                    <input type="text" name="name" required>
+                    
+                    <label>Sähköposti tai puhelinnumero</label>
+                    <input type="text" name="contact" required>
+                    
+                    <label>Viesti</label>
+                    <textarea name="message" required></textarea>
+                    
+                    <button type="submit">Lähetä yhteydenotto</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <a href="http://www.buorre.fi" target="_blank">buorre</a>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Hamburger background change on scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const whiteSections = document.querySelectorAll('.white-over');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    menuToggle.classList.add('over-white');
+                } else {
+                    // Check if any white section is still intersecting
+                    let anyWhiteVisible = false;
+                    whiteSections.forEach(section => {
+                        const rect = section.getBoundingClientRect();
+                        if (rect.top < window.innerHeight && rect.bottom > 0) {
+                            anyWhiteVisible = true;
+                        }
+                    });
+                    if (!anyWhiteVisible) {
+                        menuToggle.classList.remove('over-white');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        whiteSections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Form submission
+        document.querySelector('.contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Kiitos! Viesti lähetetty.');
+        });
+    </script>
+</body>
+</html>
