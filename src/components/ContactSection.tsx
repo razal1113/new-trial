@@ -41,16 +41,7 @@ export function ContactSection() {
                 )}
               </div>
 
-              <div className="mt-6 space-y-3">
-                <a
-                  href="https://calendly.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block border border-white/40 px-4 py-2 font-medium uppercase tracking-nav text-white/80 transition-all duration-300 hover:border-white hover:text-white"
-                >
-                  Get in touch
-                </a>
-              </div>
+
 
               <a
                 href="https://www.linkedin.com/in/andreaskbjork/"
