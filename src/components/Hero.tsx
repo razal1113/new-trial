@@ -58,7 +58,7 @@ export function Hero() {
           <img
             src={`${import.meta.env.BASE_URL}images/repower-logo.png`}
             alt="RE PWER"
-            className="mx-auto h-32 w-auto object-contain md:h-44 lg:h-56"
+            className="mx-auto h-32 w-auto object-contain md:h-44 lg:h-56 mix-blend-screen"
           />
         </motion.div>
 
