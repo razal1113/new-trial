@@ -3,13 +3,13 @@ module.exports = {
   darkMode: ["class"],
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    fontSize: {
-      sm: ['14px', { lineHeight: '1.5' }],
-      base: ['16px', { lineHeight: '1.6' }],
-      xl: ['20px', { lineHeight: '1.4' }],
-      '4xl': ['32px', { lineHeight: '1.2', fontWeight: '700' }],
-    },
     extend: {
+      fontSize: {
+        sm: ['14px', { lineHeight: '1.5' }],
+        base: ['16px', { lineHeight: '1.6' }],
+        xl: ['20px', { lineHeight: '1.4' }],
+        '4xl': ['32px', { lineHeight: '1.2', fontWeight: '700' }],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
