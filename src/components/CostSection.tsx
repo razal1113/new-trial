@@ -5,11 +5,11 @@ import { costContent } from '@/data/content';
 export function CostSection() {
   return (
     <section id="intro" className="bg-white py-16 md:py-20 lg:py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl widescreen:max-w-[1200px] px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Text Content */}
           <ScrollReveal direction="up">
-            <div className="max-w-xl">
+            <div>
               <h2 className="mb-12 font-serif leading-tight tracking-section text-primary text-2xl md:text-4xl">
                 {costContent.heading}
               </h2>

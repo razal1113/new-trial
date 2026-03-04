@@ -10,7 +10,7 @@ export function ContactSection() {
       <div className="absolute inset-0 bg-primary" />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-6xl widescreen:max-w-[1200px] px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <ScrollReveal direction="up" className="mb-12">
           <h2 className="font-serif leading-tight tracking-section text-primary text-4xl">

@@ -9,7 +9,7 @@ export function ServicesSection() {
       <div className="absolute inset-0 bg-primary" />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-6xl widescreen:max-w-[1200px] px-4 sm:px-6 lg:px-8">
         {/* Intro */}
         <ScrollReveal direction="up" className="mb-12 text-center">
           <h2 className="font-serif leading-tight tracking-section text-white text-2xl md:text-4xl">

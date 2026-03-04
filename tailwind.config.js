@@ -4,6 +4,9 @@ module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      screens: {
+        'widescreen': '1440px',
+      },
       fontSize: {
         sm: ['14px', { lineHeight: '1.5' }],
         base: ['16px', { lineHeight: '1.6' }],

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 export function Footer() {
   return (
     <footer className="bg-primary-dark py-6">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl widescreen:max-w-[1200px] px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

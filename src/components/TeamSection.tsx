@@ -5,7 +5,7 @@ import { ScrollReveal } from './ScrollReveal';
 export function TeamSection() {
   return (
     <section id="team" className="bg-white py-16 md:py-20 lg:py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl widescreen:max-w-[1200px] px-4 sm:px-6 lg:px-8">
         <ScrollReveal direction="up" className="mb-12">
           <h2 className="font-serif leading-tight tracking-section text-primary text-2xl md:text-3xl lg:text-4xl break-words">
             Recommendations
