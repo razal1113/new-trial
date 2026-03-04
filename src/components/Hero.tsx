@@ -74,7 +74,7 @@ export function Hero() {
         >
           <a
             href="#contact"
-            className="inline-block border border-white px-3 py-1.5 text-[9px] md:px-8 md:py-2.5 md:text-sm font-medium uppercase tracking-[0.2em] text-white transition-all duration-300 hover:bg-white hover:text-primary"
+            className="inline-block border border-white px-2.5 py-1 text-[8px] md:px-8 md:py-2.5 md:text-sm font-medium uppercase tracking-[0.2em] text-white transition-all duration-300 hover:bg-white hover:text-primary"
           >
             Get in touch
           </a>
@@ -82,9 +82,9 @@ export function Hero() {
             href="https://www.linkedin.com/in/andreaskbjork/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 border border-white/50 px-3 py-1.5 text-[9px] md:px-6 md:py-2.5 md:text-sm font-medium uppercase tracking-[0.2em] text-white transition-all duration-300 hover:border-white hover:bg-white/10"
+            className="inline-flex items-center gap-1.5 border border-white/50 px-2.5 py-1 text-[8px] md:px-6 md:py-2.5 md:text-sm font-medium uppercase tracking-[0.2em] text-white transition-all duration-300 hover:border-white hover:bg-white/10"
           >
-            <Linkedin className="h-3 w-3 md:h-4 md:w-4" />
+            <Linkedin className="h-2.5 w-2.5 md:h-4 md:w-4" />
             LinkedIn
           </a>
         </motion.div>

@@ -10,7 +10,7 @@ export function CostSection() {
           {/* Text Content */}
           <ScrollReveal direction="up">
             <div className="max-w-xl">
-              <h2 className="mb-12 font-serif leading-tight tracking-section text-primary text-4xl">
+              <h2 className="mb-12 font-serif leading-tight tracking-section text-primary text-2xl md:text-4xl">
                 {costContent.heading}
               </h2>
               <div className="space-y-6 leading-relaxed text-gray-600 text-base">

@@ -12,7 +12,7 @@ export function ServicesSection() {
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Intro */}
         <ScrollReveal direction="up" className="mb-12 text-center">
-          <h2 className="font-serif leading-tight tracking-section text-white text-4xl">
+          <h2 className="font-serif leading-tight tracking-section text-white text-2xl md:text-4xl">
             What I do
           </h2>
         </ScrollReveal>
