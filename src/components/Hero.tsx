@@ -70,11 +70,11 @@ export function Hero() {
             duration: 1.0,
             ease: [0.33, 1, 0.68, 1]
           }}
-          className="flex flex-col items-center gap-4 sm:flex-row sm:gap-6"
+          className="flex flex-col items-center gap-3 sm:flex-row sm:gap-6"
         >
           <a
             href="#contact"
-            className="inline-block border border-white px-6 py-2 text-xs sm:px-8 sm:py-2.5 sm:text-sm font-medium uppercase tracking-[0.2em] text-white transition-all duration-300 hover:bg-white hover:text-primary"
+            className="inline-block border border-white px-4 py-1.5 text-[10px] sm:px-6 sm:py-2 sm:text-xs font-medium uppercase tracking-[0.2em] text-white transition-all duration-300 hover:bg-white hover:text-primary"
           >
             Get in touch
           </a>
@@ -82,9 +82,9 @@ export function Hero() {
             href="https://www.linkedin.com/in/andreaskbjork/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 border border-white/50 px-4 py-2 text-xs sm:px-6 sm:py-2.5 sm:text-sm font-medium uppercase tracking-[0.2em] text-white transition-all duration-300 hover:border-white hover:bg-white/10"
+            className="inline-flex items-center gap-2 border border-white/50 px-3 py-1.5 text-[10px] sm:px-5 sm:py-2 sm:text-xs font-medium uppercase tracking-[0.2em] text-white transition-all duration-300 hover:border-white hover:bg-white/10"
           >
-            <Linkedin className="h-4 w-4" />
+            <Linkedin className="h-3 w-3 sm:h-4 sm:w-4" />
             LinkedIn
           </a>
         </motion.div>
