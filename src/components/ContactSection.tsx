@@ -26,7 +26,7 @@ export function ContactSection() {
                 <img
                   src={`${import.meta.env.BASE_URL}images/repower-logo.png`}
                   alt="rePWER"
-                  className="mb-8 h-12 w-auto object-contain object-left mix-blend-screen"
+                  className="mb-8 h-12 w-auto object-contain object-left mix-blend-screen ml-[-4px]"
                 />
 
                 <div className="space-y-8">
