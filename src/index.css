@@ -135,8 +135,14 @@
   }
 
   .brand-sticky {
-    @apply sticky top-0 h-screen overflow-hidden;
+    @apply relative min-h-screen overflow-visible;
     background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary) / 0.9) 100%);
+  }
+
+  @screen lg {
+    .brand-sticky {
+      @apply sticky top-0 h-screen overflow-hidden;
+    }
   }
 
   .content-over {
