@@ -7,7 +7,7 @@ export function TeamSection() {
     <section id="team" className="bg-white py-16 md:py-20 lg:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <ScrollReveal direction="up" className="mb-12">
-          <h2 className="font-serif text-2xl font-normal uppercase leading-tight tracking-section text-primary md:text-3xl lg:text-4xl">
+          <h2 className="font-serif uppercase leading-tight tracking-section text-primary">
             Recommendations
           </h2>
         </ScrollReveal>

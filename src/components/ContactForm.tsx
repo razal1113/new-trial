@@ -29,7 +29,7 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       <div>
-        <label htmlFor="name" className="mb-1 block text-xs uppercase tracking-nav text-white/60">
+        <label htmlFor="name" className="mb-1 block uppercase tracking-nav text-white/60">
           Your Name
         </label>
         <input
@@ -39,13 +39,13 @@ export function ContactForm() {
           value={formData.name}
           onChange={handleChange}
           required
-          className="input-underline text-sm"
+          className="input-underline"
           placeholder=""
         />
       </div>
 
       <div>
-        <label htmlFor="email" className="mb-1 block text-xs uppercase tracking-nav text-white/60">
+        <label htmlFor="email" className="mb-1 block uppercase tracking-nav text-white/60">
           Email or Phone
         </label>
         <input
@@ -55,13 +55,13 @@ export function ContactForm() {
           value={formData.email}
           onChange={handleChange}
           required
-          className="input-underline text-sm"
+          className="input-underline"
           placeholder=""
         />
       </div>
 
       <div>
-        <label htmlFor="message" className="mb-1 block text-xs uppercase tracking-nav text-white/60">
+        <label htmlFor="message" className="mb-1 block uppercase tracking-nav text-white/60">
           Message
         </label>
         <textarea
@@ -71,7 +71,7 @@ export function ContactForm() {
           onChange={handleChange}
           required
           rows={3}
-          className="input-underline resize-none text-sm"
+          className="input-underline resize-none"
           placeholder=""
         />
       </div>
@@ -80,7 +80,7 @@ export function ContactForm() {
         type="submit"
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
-        className="btn-outline mt-6 w-full text-xs"
+        className="btn-outline mt-6 w-full"
         disabled={isSubmitted}
       >
         <span>

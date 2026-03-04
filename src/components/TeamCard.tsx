@@ -21,13 +21,13 @@ export function TeamCard({ member, index }: TeamCardProps) {
     >
       {/* Info */}
       <div>
-        <h3 className="mb-1 font-serif text-base font-normal uppercase tracking-section text-primary">
+        <p className="mb-1 font-serif uppercase tracking-section text-primary">
           {member.name}
-        </h3>
-        <p className="mb-3 text-xs font-medium uppercase tracking-nav text-gray-500">
+        </p>
+        <p className="mb-3 uppercase tracking-nav text-gray-500">
           {member.title}
         </p>
-        <p className="text-sm md:text-base leading-relaxed text-gray-500 whitespace-pre-line">
+        <p className="leading-relaxed text-gray-500 whitespace-pre-line">
           {member.bio}
         </p>
       </div>

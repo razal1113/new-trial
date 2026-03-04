@@ -10,10 +10,10 @@ export function CostSection() {
           {/* Text Content */}
           <ScrollReveal direction="up">
             <div className="max-w-xl">
-              <h2 className="mb-12 font-serif text-2xl font-normal uppercase leading-tight tracking-section text-primary md:text-3xl lg:text-4xl">
+              <h2 className="mb-12 font-serif uppercase leading-tight tracking-section text-primary">
                 {costContent.heading}
               </h2>
-              <div className="space-y-6 text-sm leading-relaxed text-gray-600 md:text-base">
+              <div className="space-y-6 leading-relaxed text-gray-600">
                 {costContent.body.split('\n\n').map((paragraph, index) => (
                   <p key={index}>
                     {paragraph}
@@ -26,7 +26,7 @@ export function CostSection() {
                   href="https://www.linkedin.com/in/andreaskbjork/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 border border-primary px-8 py-3 text-sm font-medium uppercase tracking-[0.2em] text-primary transition-all duration-300 hover:bg-primary hover:text-white"
+                  className="inline-flex items-center gap-2 border border-primary px-8 py-3 font-medium uppercase tracking-[0.2em] text-primary transition-all duration-300 hover:bg-primary hover:text-white"
                 >
                   <Linkedin className="h-5 w-5" />
                   LinkedIn

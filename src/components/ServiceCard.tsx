@@ -50,10 +50,10 @@ export function ServiceCard({ icon, title, description, index }: ServiceCardProp
           strokeWidth={1}
         />
       </div>
-      <h3 className="mb-4 text-sm md:text-base font-semibold uppercase tracking-nav text-white">
+      <p className="mb-4 uppercase tracking-nav text-white">
         {title}
-      </h3>
-      <p className="text-sm md:text-base leading-relaxed text-white/70 whitespace-pre-line">
+      </p>
+      <p className="leading-relaxed text-white/70 whitespace-pre-line">
         {description}
       </p>
     </motion.div>
