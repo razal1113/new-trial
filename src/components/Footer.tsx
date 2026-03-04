@@ -13,7 +13,7 @@ export function Footer() {
         >
           <div className="mt-8 pt-8 border-t border-white/10 w-full">
             <div className="flex items-center justify-center">
-              <p className="text-center text-[8px] sm:text-[10px] text-white/40 sm:text-white/50">
+              <p className="text-center text-[8px] md:text-[12px] text-white/40 md:text-white/50">
                 Copyright © Andreas Björk / rePWER. All rights reserved.
               </p>
             </div>
