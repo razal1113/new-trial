@@ -36,8 +36,15 @@ export function TeamCard({ member, index }: TeamCardProps) {
         <p className="mb-1 font-serif uppercase tracking-section text-primary text-lg md:text-xl">
           {member.name}
         </p>
-        <p className="mb-3 uppercase tracking-nav text-gray-500 text-sm md:text-base">
+        <p className="mb-3 uppercase tracking-nav text-gray-500 text-sm md:text-base flex items-center gap-2">
           {member.title}
+          {member.companyLogo && (
+            <img
+              src={member.companyLogo}
+              alt=""
+              className="h-[1.1em] w-auto inline-block object-contain translate-y-[-1px]"
+            />
+          )}
         </p>
         <p className="leading-relaxed text-gray-500 whitespace-pre-line text-sm md:text-base">
           {member.bio}

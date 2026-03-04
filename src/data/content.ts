@@ -40,14 +40,16 @@ export const teamMembers: TeamMember[] = [
   {
     id: 1,
     name: 'Monika Liikamaa',
-    title: 'Co-Founder & CEO, Enfuce',
+    title: 'Co-Founder & CEO,',
+    companyLogo: 'images/logos/enfuce.png',
     bio: '"I very rarely write official recommendations — I\'m critical by nature and hold the bar high. But Andreas absolutely earns this one.\n\nOver the past 1.5 years, I\'ve had the pleasure of working with Andreas on a very high-stakes initiative, and I\'m immensely grateful for the impact he\'s made. He\'s one of the sharpest, most effective consultants I\'ve worked with.\n\nAndreas brings clarity, structure and momentum exactly when it\'s needed most. Whether delivery is blocked, teams are misaligned, or a critical program needs acceleration, he steps in, takes ownership and gets things moving. What truly sets him apart is his deep expertise in payments and banking combined with his ability to align business and technical priorities in complex, fast-paced environments. He doesn\'t just advise — he leads, commits and delivers real results.\n\nIf you\'re taking on a critical, cross-functional initiative and need someone who can drive it from day one — Andreas is the person to call."',
     image: 'images/monika.jpg',
   },
   {
     id: 2,
     name: 'Matias Sandås',
-    title: 'Business Transformation, Mirka',
+    title: 'Business Transformation,',
+    companyLogo: 'images/logos/mirka.png',
     bio: '"My experience of working with Andreas was excellent. He has a strong ability to understand complex situations — also outside of IT and software development — and make them simple. He clarifies agility in a pedagogical and practical way so that different people can understand how it applies to them.\n\nDuring his 1.5 years in our Customer Experience Program, Andreas made a significant impact. In a hands-on way, he helped us kick-start our agile transformation journey. I highly recommend Andreas to any organisation that is serious about creating an agile, continuous learning and collaborative team culture."',
     image: 'images/matias.jpg',
   },

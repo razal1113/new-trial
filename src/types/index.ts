@@ -9,6 +9,7 @@ export interface TeamMember {
   title: string;
   bio: string;
   image: string;
+  companyLogo?: string;
   phone?: string;
   email?: string;
 }
