@@ -12,8 +12,8 @@ export function Footer() {
           className="flex flex-col items-center justify-center text-center"
         >
           <div className="mt-8 pt-8 border-t border-white/10 w-full">
-            <div className="mt-8 md:mt-0 flex items-center justify-center">
-              <p className="text-center text-sm text-white/70">
+            <div className="flex items-center justify-center">
+              <p className="text-center text-[12px] text-white/50">
                 Copyright © Andreas Björk / rePWER. All rights reserved.
               </p>
             </div>
