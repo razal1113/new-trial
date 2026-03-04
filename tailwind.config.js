@@ -4,17 +4,10 @@ module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     fontSize: {
-      xs: ['1.125rem', { lineHeight: '1.6' }],
-      sm: ['1.125rem', { lineHeight: '1.6' }],
-      base: ['1.125rem', { lineHeight: '1.6' }],
-      lg: ['1.125rem', { lineHeight: '1.6' }],
-      xl: ['1.125rem', { lineHeight: '1.6' }],
-      '2xl': ['2.25rem', { lineHeight: '1.2', fontWeight: '700' }],
-      '3xl': ['2.25rem', { lineHeight: '1.2', fontWeight: '700' }],
-      '4xl': ['2.25rem', { lineHeight: '1.2', fontWeight: '700' }],
-      '5xl': ['2.25rem', { lineHeight: '1.2', fontWeight: '700' }],
-      '6xl': ['2.25rem', { lineHeight: '1.2', fontWeight: '700' }],
-      '7xl': ['2.25rem', { lineHeight: '1.2', fontWeight: '700' }],
+      sm: ['14px', { lineHeight: '1.5' }],
+      base: ['16px', { lineHeight: '1.6' }],
+      xl: ['20px', { lineHeight: '1.4' }],
+      '4xl': ['32px', { lineHeight: '1.2', fontWeight: '700' }],
     },
     extend: {
       colors: {

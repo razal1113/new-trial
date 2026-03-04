@@ -85,3 +85,15 @@ export const contactInfo = {
   email: 'andreas@repwer.fi',
   businessId: '',
 };
+
+export const contactContent = {
+  heading: 'GET IN TOUCH',
+  address: {
+    street: 'Vaasa',
+    city: 'Finland',
+    country: ''
+  },
+  email: 'andreas@repwer.fi',
+  phone: '',
+  blurb: "I work with a small number of clients at a time. If you're facing a high-stakes delivery challenge, a platform transformation or a program that needs to move faster — I'd like to hear about it."
+};

@@ -12,9 +12,11 @@ export function Footer() {
           className="flex flex-col items-center justify-center text-center"
         >
           <div className="mt-8 pt-8 border-t border-white/10 w-full">
-            <p className="text-[10px] uppercase tracking-[0.2em] text-white/40">
-              Copyright © Andreas Björk / rePWER. All rights reserved.
-            </p>
+            <div className="mt-8 md:mt-0 flex items-center justify-center">
+              <p className="text-center text-sm text-white/70">
+                Copyright © Andreas Björk / rePWER. All rights reserved.
+              </p>
+            </div>
           </div>
         </motion.div>
       </div>

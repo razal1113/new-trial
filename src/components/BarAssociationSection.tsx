@@ -45,7 +45,7 @@ export function BarAssociationSection() {
             </svg>
           </motion.div>
 
-          <p className="font-serif uppercase tracking-section text-white">
+          <p className="font-serif uppercase tracking-section text-white text-xl">
             Fintech & Payments · Platform Delivery · Program Leadership
           </p>
         </motion.div>

@@ -50,28 +50,6 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    font-size: 1.125rem !important;
-    /* 18px force */
-    font-weight: 400 !important;
-    line-height: 1.6 !important;
-  }
-
-  /* Force all body text elements to same size */
-  p,
-  span,
-  a,
-  li,
-  b,
-  i,
-  strong,
-  em,
-  button,
-  input,
-  textarea,
-  label {
-    font-size: 1.125rem !important;
-    font-weight: inherit;
-    /* Allow bold within body only if explicitly bolded */
   }
 
   h1,
@@ -81,11 +59,7 @@
   h5,
   h6 {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    font-size: 2.25rem !important;
-    /* 36px force */
-    font-weight: 700 !important;
-    line-height: 1.2 !important;
-    text-transform: uppercase;
+    @apply font-bold uppercase;
   }
 }
 
@@ -135,18 +109,13 @@
   }
 
   .brand-sticky {
-    @apply relative min-h-screen overflow-visible;
+    @apply sticky top-0 min-h-screen w-full;
     background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary) / 0.9) 100%);
   }
 
-  @screen lg {
-    .brand-sticky {
-      @apply sticky top-0 h-screen overflow-hidden;
-    }
-  }
-
+  /* Ensure content over has a high z-index and clear background */
   .content-over {
-    @apply relative z-20 bg-white;
+    @apply relative z-20 bg-white min-h-screen w-full;
   }
 }
 

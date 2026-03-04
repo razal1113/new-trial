@@ -8,10 +8,10 @@ export function AboutSection() {
         {/* Text Content */}
         <ScrollReveal direction="up" className="flex items-center">
           <div>
-            <h2 className="mb-8 font-serif uppercase leading-tight tracking-section text-primary">
+            <h2 className="mb-8 font-serif leading-tight tracking-section text-primary text-4xl">
               {aboutContent.heading}
             </h2>
-            <div className="space-y-6 leading-relaxed text-gray-600">
+            <div className="space-y-6 leading-relaxed text-gray-600 text-base">
               {aboutContent.body.split('\n\n').map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import type { ReactNode } from 'react';
+import { type ReactNode, useEffect, useState } from 'react';
 
 interface ScrollRevealProps {
   children: ReactNode;
@@ -14,11 +14,25 @@ export function ScrollReveal({
   direction = 'up',
   className = ''
 }: ScrollRevealProps) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const distance = isMobile ? 15 : 20;
+  const duration = isMobile ? 0.4 : 0.6;
+
   const directions = {
-    up: { y: 40, x: 0 },
-    down: { y: -40, x: 0 },
-    left: { y: 0, x: 40 },
-    right: { y: 0, x: -40 },
+    up: { y: distance, x: 0 },
+    down: { y: -distance, x: 0 },
+    left: { y: 0, x: distance },
+    right: { y: 0, x: -distance },
   };
 
   return (
@@ -34,9 +48,9 @@ export function ScrollReveal({
       }}
       viewport={{ once: true, margin: '-5%' }}
       transition={{
-        duration: 0.8,
+        duration,
         delay,
-        ease: [0.33, 1, 0.68, 1]
+        ease: 'easeOut'
       }}
       className={className}
     >

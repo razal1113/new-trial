@@ -1,9 +1,21 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Linkedin } from 'lucide-react';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const distanceLogo = isMobile ? 20 : 30; // Slightly reduced from native sizes
+  const distanceContent = isMobile ? 15 : 20;
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"]
@@ -35,7 +47,7 @@ export function Hero() {
       {/* Content */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-4">
         <motion.div
-          initial={{ opacity: 0, y: 30, scale: 0.95 }}
+          initial={{ opacity: 0, y: distanceLogo, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{
             duration: 1.2,
@@ -51,10 +63,10 @@ export function Hero() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: distanceContent }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
-            delay: 0.8,
+            delay: 1.2, // Incremented delay from 0.8 to 1.2
             duration: 1.0,
             ease: [0.33, 1, 0.68, 1]
           }}
