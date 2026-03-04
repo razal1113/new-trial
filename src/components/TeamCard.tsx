@@ -27,7 +27,7 @@ export function TeamCard({ member, index }: TeamCardProps) {
         <p className="mb-3 text-xs font-medium uppercase tracking-nav text-gray-500">
           {member.title}
         </p>
-        <p className="text-xs leading-relaxed text-gray-500 whitespace-pre-line">
+        <p className="text-sm md:text-base leading-relaxed text-gray-500 whitespace-pre-line">
           {member.bio}
         </p>
       </div>

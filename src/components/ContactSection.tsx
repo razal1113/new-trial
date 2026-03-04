@@ -13,7 +13,7 @@ export function ContactSection() {
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <ScrollReveal direction="up" className="mb-12">
-          <h2 className="font-serif text-2xl font-normal uppercase tracking-section text-white md:text-3xl">
+          <h2 className="font-serif text-2xl font-normal uppercase tracking-section text-white md:text-3xl lg:text-4xl">
             Get in Touch
           </h2>
         </ScrollReveal>
@@ -22,9 +22,11 @@ export function ContactSection() {
           {/* Company Info */}
           <ScrollReveal direction="up" delay={0}>
             <div>
-              <h3 className="mb-4 font-serif text-sm uppercase tracking-section text-white/80">
-                {contactInfo.company}
-              </h3>
+              <img
+                src={`${import.meta.env.BASE_URL}images/repower-logo.png`}
+                alt="rePWER"
+                className="mb-6 h-12 w-auto object-contain brightness-0 invert opacity-80"
+              />
               <div className="space-y-1 text-xs text-white/60">
                 <p className="font-medium text-white/80">{contactInfo.address}</p>
                 {contactInfo.email && (
@@ -51,7 +53,7 @@ export function ContactSection() {
               </div>
 
               <a
-                href="https://www.linkedin.com/in/andreasbjork/"
+                href="https://www.linkedin.com/in/andreaskbjork/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-6 inline-flex items-center gap-2 text-white/60 transition-opacity hover:text-white"
@@ -64,7 +66,7 @@ export function ContactSection() {
           {/* Contact blurb */}
           <ScrollReveal direction="up" delay={0.1}>
             <div>
-              <p className="text-xs leading-relaxed text-white/60">
+              <p className="text-sm md:text-base leading-relaxed text-white/60">
                 I work with a small number of clients at a time. If you're facing a high-stakes delivery challenge, a platform transformation or a program that needs to move faster — I'd like to hear about it.
               </p>
             </div>

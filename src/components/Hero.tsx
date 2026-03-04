@@ -67,7 +67,7 @@ export function Hero() {
             Get in touch
           </a>
           <a
-            href="https://www.linkedin.com/in/andreasbjork/"
+            href="https://www.linkedin.com/in/andreaskbjork/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 border border-white/50 px-8 py-3 text-sm font-medium uppercase tracking-[0.2em] text-white transition-all duration-300 hover:border-white hover:bg-white/10"

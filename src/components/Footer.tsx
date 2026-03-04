@@ -11,7 +11,11 @@ export function Footer() {
           transition={{ duration: 0.6 }}
           className="flex flex-col items-center justify-center text-center"
         >
-          <div className="h-6" />
+          <div className="mt-8 pt-8 border-t border-white/10 w-full">
+            <p className="text-[10px] uppercase tracking-[0.2em] text-white/40">
+              Copyright © Andreas Björk / rePWER. All rights reserved.
+            </p>
+          </div>
         </motion.div>
       </div>
     </footer>

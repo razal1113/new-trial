@@ -22,7 +22,7 @@ export function CostSection() {
 
             <div className="mt-10">
               <a
-                href="https://www.linkedin.com/in/andreasbjork/"
+                href="https://www.linkedin.com/in/andreaskbjork/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 border border-primary px-8 py-3 text-sm font-medium uppercase tracking-[0.2em] text-primary transition-all duration-300 hover:bg-primary hover:text-white"
