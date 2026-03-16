@@ -1,5 +1,4 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Linkedin } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
 export function Hero() {
@@ -33,13 +32,13 @@ export function Hero() {
         className="absolute inset-0"
       >
         <img
-          src={`${import.meta.env.BASE_URL}images/hero-building.jpg`}
-          alt=""
+          src={`${import.meta.env.BASE_URL}images/hero-stock.png`}
+          alt="Stock Chart"
           className="h-full w-full object-cover"
         />
         {/* Overlay */}
         <div
-          className="absolute inset-0 bg-[#617c85]/60"
+          className="absolute inset-0 bg-[#292927]/60"
         />
       </motion.div>
 
@@ -70,23 +69,11 @@ export function Hero() {
             duration: 1.0,
             ease: [0.33, 1, 0.68, 1]
           }}
-          className="flex flex-col items-center gap-3 md:flex-row md:gap-6"
+          className="text-center px-4 md:px-0"
         >
-          <a
-            href="#contact"
-            className="inline-block border border-white px-2.5 py-1 text-[8px] md:px-8 md:py-2.5 md:text-sm font-medium uppercase tracking-[0.2em] text-white transition-all duration-300 hover:bg-white hover:text-primary"
-          >
-            Get in touch
-          </a>
-          <a
-            href="https://www.linkedin.com/in/andreaskbjork/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 border border-white/50 px-2.5 py-1 text-[8px] md:px-6 md:py-2.5 md:text-sm font-medium uppercase tracking-[0.2em] text-white transition-all duration-300 hover:border-white hover:bg-white/10"
-          >
-            <Linkedin className="h-2.5 w-2.5 md:h-4 md:w-4" />
-            LinkedIn
-          </a>
+          <p className="text-white text-lg md:text-2xl lg:text-3xl font-medium tracking-wide max-w-3xl mx-auto drop-shadow-sm">
+            Product &amp; program leadership for complex IT delivery
+          </p>
         </motion.div>
       </div>
     </section>

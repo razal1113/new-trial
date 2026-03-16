@@ -1,5 +1,4 @@
 import { ScrollReveal } from './ScrollReveal';
-import { ContactForm } from './ContactForm';
 import { contactContent } from '@/data/content';
 import { Linkedin, Mail } from 'lucide-react';
 
@@ -10,7 +9,7 @@ export function ContactSection() {
       <div className="absolute inset-0 bg-primary" />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-6xl widescreen:max-w-[1200px] px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-6xl widescreen:max-w-[1200px] px-4 sm:px-6 lg:px-8 text-center">
         {/* Section Title */}
         <ScrollReveal direction="up" className="mb-12">
           <h2 className="font-serif leading-tight tracking-section text-primary text-4xl">
@@ -18,20 +17,20 @@ export function ContactSection() {
           </h2>
         </ScrollReveal>
 
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-start">
+        <div className="flex flex-col items-center justify-center max-w-2xl mx-auto">
           {/* Company Info column */}
           <ScrollReveal direction="up" delay={0}>
-            <div className="space-y-10">
-              <div>
+            <div className="space-y-10 flex flex-col items-center">
+              <div className="flex flex-col items-center">
                 <img
                   src={`${import.meta.env.BASE_URL}images/repower-logo.png`}
                   alt="rePWER"
-                  className="mb-8 h-12 w-auto object-contain object-left mix-blend-screen ml-[-4px]"
+                  className="mb-8 h-12 w-auto object-contain mix-blend-screen"
                 />
 
-                <div className="space-y-8">
+                <div className="space-y-8 flex flex-col items-center">
                   {/* Address & Email */}
-                  <div className="space-y-4">
+                  <div className="space-y-4 flex flex-col items-center">
                     <div className="space-y-1 uppercase tracking-nav text-lg text-white/70">
                       <p>{contactContent.address.street}</p>
                       <p>{contactContent.address.city}</p>
@@ -66,11 +65,6 @@ export function ContactSection() {
                 </div>
               </div>
             </div>
-          </ScrollReveal>
-
-          {/* Contact Form column */}
-          <ScrollReveal direction="up" delay={0.2}>
-            <ContactForm />
           </ScrollReveal>
         </div>
       </div>
