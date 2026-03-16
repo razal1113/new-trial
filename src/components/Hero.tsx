@@ -34,11 +34,11 @@ export function Hero() {
         <img
           src={`${import.meta.env.BASE_URL}images/hero-stock.png`}
           alt="Stock Chart"
-          className="h-full w-full object-cover grayscale"
+          className="h-full w-full object-cover grayscale contrast-125"
         />
         {/* Overlay */}
         <div
-          className="absolute inset-0 bg-[#292927]/60"
+          className="absolute inset-0 bg-black/60"
         />
       </motion.div>
 
