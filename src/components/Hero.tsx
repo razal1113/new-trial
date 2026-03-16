@@ -32,8 +32,8 @@ export function Hero() {
         className="absolute inset-0 z-0"
       >
         <img
-          src={`${import.meta.env.BASE_URL}images/hero-stock.png`}
-          alt="Stock Chart"
+          src={`${import.meta.env.BASE_URL}images/new-hero.jpg`}
+          alt="Hero Background"
           className="h-full w-full object-cover grayscale contrast-125"
         />
         {/* Overlay */}
