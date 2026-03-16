@@ -38,7 +38,7 @@ export function Hero() {
         />
         {/* Overlay */}
         <div
-          className="absolute inset-0 bg-black/60"
+          className="absolute inset-0 bg-[#292927]/70 mix-blend-multiply"
         />
       </motion.div>
 
