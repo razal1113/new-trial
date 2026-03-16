@@ -29,7 +29,7 @@ export function Hero() {
       {/* Background Image */}
       <motion.div
         style={{ opacity, scale, y }}
-        className="absolute inset-0"
+        className="absolute inset-0 z-0"
       >
         <img
           src={`${import.meta.env.BASE_URL}images/hero-stock.png`}
