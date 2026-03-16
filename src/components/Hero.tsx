@@ -34,7 +34,7 @@ export function Hero() {
         <img
           src={`${import.meta.env.BASE_URL}images/hero-stock.png`}
           alt="Stock Chart"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover grayscale"
         />
         {/* Overlay */}
         <div
