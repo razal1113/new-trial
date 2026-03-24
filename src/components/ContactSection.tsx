@@ -23,7 +23,7 @@ export function ContactSection() {
             <div className="space-y-10 flex flex-col items-center">
               <div className="flex flex-col items-center">
                 <img
-                  src={`${import.meta.env.BASE_URL}images/repower-logo.png`}
+                  src={`${import.meta.env.BASE_URL}images/repwer-logo.png`}
                   alt="rePWER"
                   className="mb-8 h-12 w-auto object-contain mix-blend-screen"
                 />

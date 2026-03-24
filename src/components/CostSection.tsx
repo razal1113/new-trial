@@ -40,7 +40,7 @@ export function CostSection() {
             <div className="relative aspect-square overflow-hidden bg-gray-50 lg:aspect-[4/5] xl:aspect-square">
               <img
                 src={`${import.meta.env.BASE_URL}images/andreas-about.jpg`}
-                alt="Andreas Björk"
+                alt="rePWER"
                 className="h-full w-full object-cover object-center"
               />
             </div>
